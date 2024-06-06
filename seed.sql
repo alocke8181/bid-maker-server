@@ -5,7 +5,7 @@ INSERT INTO bids (name, user_id)
 VALUES ('test bid',1);
 
 INSERT INTO workdays (name, bid_id)
-VALUES ('test workday',1)
+VALUES ('test workday',1);
 
 INSERT INTO units (name, start_time, end_time, allow_breaks)
 VALUES ('test unit 1', '09:00:00', '17:00:00',FALSE),
@@ -15,7 +15,7 @@ VALUES ('test unit 1', '09:00:00', '17:00:00',FALSE),
 INSERT INTO shifts (shift_num, workday_id, driver_name, hours)
 VALUES (1,1,'test driver 1',8.00),
         (2,1,'test driver 2',9.25),
-        (3,1,NULL,8.75)
+        (3,1,NULL,8.75);
 
 INSERT INTO blocks (name, unit_id, shift_id, start_time, end_time, pretrip, posttrip, can_overlap, dc_to, dc_from)
 VALUES ('1A',1,1,'09:00:00','17:00:00',15,5,FALSE,0,0),

@@ -1,8 +1,6 @@
 \echo 'Del and recreate db?'
 \prompt 'Yes or ctrl-c to canx' foo
 
-DROP DATABASE bid_maker;
-CREATE DATABASE bid_maker;
 \connect bid_maker;
 
 \i schema.sql;

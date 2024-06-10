@@ -49,7 +49,7 @@ class User{
         const result = await db.query(`
             SELECT id, username FROM users WHERE id = $1`,[id]);
         if(!result.rows[0]){
-            throw new NotFoundError(`No user id: ${id}`);
+            throw new NotFoundError(`No user id: ${id} for USER GET`);
         }
         return new User(result.rows[0]);
     };
@@ -74,7 +74,7 @@ class User{
             RETURNING id, username`,
             [newHashedPwd, user.id]);
         if(!result.rows[0]){
-            throw new NotFoundError(`No user id: ${id}`)
+            throw new NotFoundError(`No user id: ${id} for USER PATCH`)
         }
         return new User(result.rows[0]);
     }
@@ -86,7 +86,7 @@ class User{
             RETURNING id`,
             [id]);
         if(!result.rows[0]){
-            throw new NotFoundError(`No user id: ${id}`)
+            throw new NotFoundError(`No user id: ${id} for USER DELETE`)
         };
     };
 };
